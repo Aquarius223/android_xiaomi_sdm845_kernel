@@ -116,5 +116,11 @@ all.config
 # Kdevelop4
 *.kdev4
 
+# out-kernel
+out
+
+# audio-kernel
+audio-kernel
+
 # fetched Android config fragments
 kernel/configs/android-*.cfg
