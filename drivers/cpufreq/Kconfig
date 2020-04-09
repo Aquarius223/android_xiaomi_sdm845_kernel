@@ -119,6 +119,15 @@ config CPU_FREQ_DEFAULT_GOV_INTERACTIVE
 	  you to get a full dynamic cpu frequency capable system by simply
 	  loading your cpufreq low-level hardware driver, using the
 	  'interactive' governor for latency-sensitive workloads.
+	 
+config CPU_FREQ_DEFAULT_GOV_STICUTIL
+	bool "sticutil"
+	select CPU_FREQ_GOV_STICUTIL
+	select CPU_FREQ_GOV_PERFORMANCE
+	help
+	  Use the 'sticutil' CPUFreq governor by default. If unsure,
+	  have a look at the help section of that governor. The fallback
+	  governor will be 'performance'.
 
 config CPU_FREQ_DEFAULT_GOV_SCHEDUTIL
 	bool "schedutil"
@@ -238,6 +247,32 @@ config CPU_BOOST
 	  - Migration of important threads from one CPU to another.
 
 	  If in doubt, say N.
+	  
+config CPU_FREQ_GOV_STICUTIL
+	tristate "'sticutil' cpufreq policy governor"
+	depends on CPU_FREQ
+	select CPU_FREQ_GOV_ATTR_SET
+	select IRQ_WORK
+	help
+	  test
+	  
+if CPU_FREQ_GOV_STICUTIL
+
+config STICUTIL_UP_RATE_LIMIT
+	int "Default up rate-limit for schedutil"
+	default 1000
+	help
+	  This sets schedutil's default frequency up rate-limit in
+	  microseconds.
+
+config STICUTIL_DOWN_RATE_LIMIT
+	int "Default down rate-limit for schedutil"
+	default 2000
+	help
+	  This sets schedutil's default frequency down rate-limit in
+	  microseconds.
+
+endif
 
 config CPU_FREQ_GOV_SCHEDUTIL
 	bool "'schedutil' cpufreq policy governor"
