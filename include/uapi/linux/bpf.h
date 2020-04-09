@@ -1,4 +1,5 @@
 /* Copyright (c) 2011-2014 PLUMgrid, http://plumgrid.com
+ * Copyright (C) 2019 XiaoMi, Inc.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of version 2 of the GNU General Public
@@ -551,6 +552,15 @@ enum bpf_func_id {
 	 *     inside sk_buff is NULL
 	 */
 	BPF_FUNC_get_socket_uid,
+	
+	/**
+	 * u64 bpf_get_comm_hash_from_sk(skb)
+	 *     Get the comm hash of the socket process stored inside sk_buff.
+	 *     @skb: pointer to skb
+	 *     Return: comm hash of the socket owner on success or 0 if the socket
+	 *     pointer inside sk_buff is NULL
+	 */
+	BPF_FUNC_get_comm_hash_from_sk,
 
 	__BPF_FUNC_MAX_ID,
 };
