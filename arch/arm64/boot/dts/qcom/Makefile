@@ -76,10 +76,7 @@ dtb-y += \
 	sdm845-v2-mtp.dtb \
 	sdm845-v2-cdp.dtb \
 	sdm845-qrd.dtb \
-	sdm845-v2-qrd.dtb \
-	sdm845-4k-panel-mtp.dtb \
-	sdm845-4k-panel-cdp.dtb \
-	sdm845-4k-panel-qrd.dtb
+	sdm845-v2-qrd.dtb
 
 dtb-$(CONFIG_MACH_XIAOMI_D5X) += \
 	polaris-p0.dtb \
@@ -155,9 +152,6 @@ ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
 		sdm845-cdp-overlay.dtbo \
 		sdm845-mtp-overlay.dtbo \
 		sdm845-qrd-overlay.dtbo \
-		sdm845-4k-panel-mtp-overlay.dtbo \
-		sdm845-4k-panel-cdp-overlay.dtbo \
-		sdm845-4k-panel-qrd-overlay.dtbo \
 		sdm845-v2-qvr-evt-overlay.dtbo \
 		sdm845-v2-qvr-dvt-overlay.dtbo \
 		sdm845-v2-cdp-overlay.dtbo \
@@ -200,9 +194,6 @@ ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
 sdm845-cdp-overlay.dtbo-base := sdm845.dtb
 sdm845-mtp-overlay.dtbo-base := sdm845.dtb
 sdm845-qrd-overlay.dtbo-base := sdm845.dtb
-sdm845-4k-panel-mtp-overlay.dtbo-base := sdm845.dtb
-sdm845-4k-panel-cdp-overlay.dtbo-base := sdm845.dtb
-sdm845-4k-panel-qrd-overlay.dtbo-base := sdm845.dtb
 sdm845-v2-qvr-evt-overlay.dtbo-base := sdm845-v2.dtb
 sdm845-v2-qvr-dvt-overlay.dtbo-base := sdm845-v2.dtb
 sdm845-v2-cdp-overlay.dtbo-base := sdm845-v2.dtb
@@ -254,9 +245,6 @@ dtb-$(CONFIG_ARCH_SDM845) += sdm845-sim.dtb \
 	sdm845-v2-qrd.dtb \
 	sdm845-v2-qvr-evt.dtb \
 	sdm845-v2-qvr-dvt.dtb \
-	sdm845-4k-panel-mtp.dtb \
-	sdm845-4k-panel-cdp.dtb \
-	sdm845-4k-panel-qrd.dtb \
 	sdm845-interposer-sdm670-mtp.dtb \
 	sdm845-interposer-sdm670-cdp.dtb \
 	sdm845-v2.1-rb3.dtb \
@@ -338,8 +326,7 @@ ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
 		sxr1130-usbc-external-codec-pm660a-mtp-overlay.dtbo \
 		sxr1130-usbc-mtp-overlay.dtbo \
 		sxr1130-usbc-pm660a-mtp-overlay.dtbo \
-		sxr1130-qrd-overlay.dtbo \
-		sxr1130-svr-overlay.dtbo
+		sxr1130-qrd-overlay.dtbo
 
 sdm670-cdp-overlay.dtbo-base := sdm670.dtb
 sdm670-mtp-overlay.dtbo-base := sdm670.dtb
@@ -414,7 +401,6 @@ sxr1130-usbc-external-codec-pm660a-mtp-overlay.dtbo-base := sxr1130.dtb
 sxr1130-usbc-mtp-overlay.dtbo-base := sxr1130.dtb
 sxr1130-usbc-pm660a-mtp-overlay.dtbo-base := sxr1130.dtb
 sxr1130-qrd-overlay.dtbo-base := sxr1130.dtb
-sxr1130-svr-overlay.dtbo-base := sxr1130.dtb
 
 else
 dtb-$(CONFIG_ARCH_SDM670) += sdm670-rumi.dtb \
@@ -486,8 +472,7 @@ dtb-$(CONFIG_ARCH_SDM670) += sdm670-rumi.dtb \
 	sxr1130-usbc-external-codec-pm660a-mtp.dtb \
 	sxr1130-usbc-mtp.dtb \
 	sxr1130-usbc-pm660a-mtp.dtb \
-	sxr1130-qrd.dtb \
-	sxr1130-svr.dtb
+	sxr1130-qrd.dtb
 endif
 
 ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)

@@ -1,5 +1,5 @@
 /* Copyright (c) 2015, The Linux Foundation. All rights reserved.
- * Copyright (C) 2018 XiaoMi, Inc.
+ * Copyright (C) 2019 XiaoMi, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -37,7 +37,6 @@
 		qcom,mdss-dsi-lane-1-state;
 		qcom,mdss-dsi-lane-2-state;
 		qcom,mdss-dsi-lane-3-state;
-
 		qcom,mdss-dsi-bl-min-level = <1>;
 		qcom,mdss-dsi-bl-max-level = <4095>;
 		qcom,mdss-brightness-max-level = <4095>;
@@ -49,16 +48,15 @@
 		qcom,mdss-pan-physical-height-dimension = <136>;
 		qcom,cont-splash-enabled;
 		qcom,mdss-dsi-tx-eot-append;
-		qcom,mdss-panel-on-dimming-delay = <120>;
-
+		qcom,mdss-panel-on-dimming-delay = <100>;
 		qcom,mdss-dsi-pan-enable-dynamic-fps;
 		qcom,mdss-dsi-pan-fps-update = "dfps_immediate_porch_mode_vfp";
-		qcom,dsi-supported-dfps-list = <60 55>;
+		qcom,dsi-supported-dfps-list = <62 57>;
 		qcom,dispccbb-enabled;
 		qcom,dispblnotify-enabled;
 		qcom,dispparam-enabled;
 		/*qcom,disp-paneloff-disablecabc-enabled;*/
-		qcom,mdss-night-brightness = <7 25 43 61>;
+		qcom,mdss-night-brightness = <1 7 25 43 61>;
 		qcom,disp-panel-offon-mode-enabled;
 		qcom,mdss-dsi-panel-hdr-enabled;
 		qcom,mdss-dsi-panel-hdr-color-primaries = <14500 15500 32000
@@ -84,14 +82,12 @@
 		/*qcom,mdss-dsi-panel-on-check-value = <0x9c>;*/
 		qcom,mdss-dsi-panel-status-read-length = <1 1 1 1 1 1 1>;
 		qcom,mdss-panel-off-keep-reset;
-
 		qcom,ulps-enabled;
  		qcom,suspend-ulps-enabled;
 		qcom,panel-allow-phy-poweroff;
-
 		qcom,mdss-dsi-display-timings {
 			timing@0{
-				qcom,mdss-dsi-panel-framerate = <60>;
+				qcom,mdss-dsi-panel-framerate = <62>;
 				qcom,mdss-dsi-panel-width = <1080>;
 				qcom,mdss-dsi-panel-height = <2160>;
 				qcom,mdss-dsi-h-front-porch = <28>;
@@ -243,7 +239,7 @@
 				qcom,mdss-dsi-displayon-command = [05 01 00 00 14 00 02 29 00];
 				qcom,mdss-dsi-displayoff-command-state = "dsi_hs_mode";
 				qcom,mdss-dsi-displayon-command-state = "dsi_hs_mode";
-				qcom,mdss-dsi-h-sync-pulse = <1>;
+				qcom,mdss-dsi-h-sync-pulse = <0>;
 
 				qcom,mdss-dsi-dispparam-cabcuion-command = [
 					15 01 00 00 00 00 02 55 01
